@@ -272,3 +272,7 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+elif action == "set_name":
+            name = data.get("name", f"Игрок")
+            if player_id in world["players"]:
+                world["players"][player_id]["name"] = name
