@@ -183,7 +183,7 @@ async def handle_message(ws, player_id, msg):
          elif action == "set_name":
              name = data.get("name", f"Игрок")
              if player_id in world["players"]:
-                world["players"][player_id]["name"] = name
+             world["players"][player_id]["name"] = name
                 }))
 
     except Exception as e:
