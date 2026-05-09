@@ -180,6 +180,10 @@ async def handle_message(ws, player_id, msg):
                 await ws.send(json.dumps({
                     "type": "gather_ok",
                     "resource": res_type
+         elif action == "set_name":
+             name = data.get("name", f"Игрок")
+             if player_id in world["players"]:
+                world["players"][player_id]["name"] = name
                 }))
 
     except Exception as e:
@@ -272,7 +276,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-elif action == "set_name":
-            name = data.get("name", f"Игрок")
-            if player_id in world["players"]:
-                world["players"][player_id]["name"] = name
